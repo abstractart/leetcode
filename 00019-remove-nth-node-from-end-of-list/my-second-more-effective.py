@@ -10,7 +10,6 @@ class Solution:
 
         node = self.findNthNode(head, l - n)
         node.next = node.next.next
-
         
         return head
         
