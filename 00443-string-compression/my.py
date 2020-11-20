@@ -5,15 +5,12 @@ class Solution:
         chars.append("\n")
         
         for i in range(1, len(chars)):
-            prev = chars[i - 1]
-            c = chars[i]
-            
-            if c == prev:
+            if chars[i] == chars[i - 1]:
                 count += 1
                 continue
             
             # Write char
-            chars[length] = prev
+            chars[length] = chars[i - 1]
             length += 1
             
             if count == 1: continue
