@@ -12,10 +12,12 @@ class Solution:
             else:
                 parent.left = node
         
-        parents.append((node, curr_level))
         next_level = self.nextLevel(S)
         
-        if "-" in S:
+        if next_level > curr_level:
+            parents.append((node, curr_level))
+        
+        if next_level > 0:
             S = S[S.index('-') + next_level:]
             self.recoverFromPreorderRec(S, next_level, parents)
         
