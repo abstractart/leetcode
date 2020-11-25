@@ -1,6 +1,7 @@
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
-        if len(lists) == 0: return None
+        if len(lists) == 0:
+            return None
         
         while(len(lists) > 1):                    
             lists.insert(0, (self.merge(lists.pop(), lists.pop())))
