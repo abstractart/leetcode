@@ -1,12 +1,18 @@
+from queue import SimpleQueue
+
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
-        if len(lists) == 0:
-            return None
+        if len(lists) == 0: return None
         
-        while(len(lists) > 1):                    
-            lists.insert(0, (self.merge(lists.pop(), lists.pop())))
+        q = SimpleQueue()
+        for l in lists:
+            q.put(l)
+
+        
+        while(q.qsize() > 1):                    
+            q.put(self.merge(q.get(), q.get()))
             
-        return lists[0]
+        return q.get()
     
     
     def merge(self, l1, l2):
