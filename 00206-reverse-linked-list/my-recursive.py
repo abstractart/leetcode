@@ -1,32 +1,14 @@
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
-        return self.reverseListRec(head, None)
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        return self.reverse(head, None)
     
-    def reverseListRec(self, source, target):
-        if not source: return target
-        
-        node = source
-        source = source.next
-
-        node.next = target
-        target = node
-        
-        return self.reverseListRec(source, target)
-        
-
-        
-   class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
-        return self.reverseListRec(head, None)
     
-    def reverseListRec(self, source, target):
-        if not source: return target
+    def reverse(self, head, newHead):
+        if head is None:
+            return newHead
         
-        # New Head of source list
-        newSource = source.next
+        tmp = head.next
+        head.next = newHead
+        newHead = head
         
-        # head of target list
-        source.next = target
-        target = source
-        
-        return self.reverseListRec(newSource, target)
+        return self.reverse(tmp, newHead)
