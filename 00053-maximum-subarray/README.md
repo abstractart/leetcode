@@ -8,4 +8,4 @@
 
 ## Решение №3 (Kadane)
 
-## Решение №4 (Divide & Conquer)
+## Решение №4 (Divide & Conquer) (Recursive & Iterative)
