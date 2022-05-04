@@ -1,30 +1,19 @@
+from collections import Counter
+
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
-        cache = self.buildCache(nums)
+        cache = Counter(nums)
         result = 0
-        for left in nums:
+        for left in cache:
             right = k - left
             if right in cache:
                 if right == left:
-                    result += len(cache[left]) // 2
+                    result += cache[left] // 2
                 else: 
-                    result += min(len(cache[left]), len(cache[right]))
-                    cache[right] = []
+                    result += min(cache[left], cache[right])
+                    cache[right] = 0
                 
-                cache[left] = []
+                cache[left] = 0
 
                 
         return result
-    
-    
-    def buildCache(self, nums):
-        d = {}
-        
-        for i, n in enumerate(nums):
-            if n not in d:
-                d[n] = set()
-            
-            d[n].add(i)
-        
-        return d
-        
