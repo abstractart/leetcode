@@ -1,5 +1,5 @@
 # 347. Top K Frequent Elements
 
 ## QuickSelect
-## Heap
+## Heap (Min, Max)
 ## BucketSort
