@@ -7,11 +7,7 @@ class Solution:
         buy = 0
         sell = 1
         
-        while(buy <= sell and sell in range(len(prices))):
-            if buy == sell:
-                sell += 1
-                continue
-            
+        while(buy <= sell and sell < len(prices)):            
             if prices[buy] >= prices[sell]:
                 buy = sell
                 sell = buy + 1
