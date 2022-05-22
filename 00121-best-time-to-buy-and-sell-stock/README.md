@@ -10,3 +10,5 @@
 
 в цикле проверяем: если цена продажи меньше или равна цене покупки то переключаем buy = sell a sell = buy + 1
 если иначе то пытаемся посчитать прибыль и сравнить с максимальной которую нашли на предыдыщих шагах
+## DP
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/2060477/DPPython-My-bottom-up-DP-Thinking-Process
